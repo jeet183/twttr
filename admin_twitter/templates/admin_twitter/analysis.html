@@ -1,0 +1,97 @@
+{% extends "admin_twitter/admin_base.html" %}
+
+{% block title %}{{ block.super }} | Welcome{% endblock title %}
+
+
+
+{% block content %}
+	<h1 align="center">Analysis</h1>
+	<h2 align="center">Normal Tweets</h2>
+	<table class="table table-bordered table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Username</th>
+      <th scope="col">Tweet</th>
+      <th scope="col">Prediction</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+  	{% for t in normal_tweets %}
+    <tr>
+      <td>{{t.User}}</td>
+      <td>{{t.tweet}}</td>
+      <td>{{t.prediction}}</td>
+      <td>{{t.status}}</td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+
+    <br>
+    <br>
+    <h2 align="center">Toxic Tweets</h2>
+	<table class="table table-bordered table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Username</th>
+      <th scope="col">Tweet</th>
+      <th scope="col">Prediction</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+  	{% for t in toxic_tweets %}
+    <tr>
+      <td>{{t.User}}</td>
+      <td>{{t.tweet}}</td>
+      <td>{{t.prediction}}</td>
+      <td>{{t.status}}</td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+    <br>
+    <br>
+    <h2 align="center">User Ratings</h2>
+	<table class="table table-bordered table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Username</th>
+      <th scope="col">Rating</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+  	{% for t in user_rating_list %}
+    <tr>
+      <td>{{t.User}}</td>
+      <td>{{t.rating}}</td>
+      <td>{{t.status}}</td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+
+<br>
+    <br>
+    <h2 align="center">HashTags</h2>
+	<table class="table table-bordered table-dark">
+  <thead>
+    <tr>
+      <th scope="col">HashTag</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+  	{% for t in hashtag_rating %}
+    <tr>
+      <td>{{t.hashtag}}</td>
+      <td>{{t.status}}</td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+
+
+{% endblock content %}

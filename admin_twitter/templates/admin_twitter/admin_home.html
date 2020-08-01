@@ -1,0 +1,23 @@
+{% extends "admin_twitter/admin_base.html" %}
+
+{% block title %}{{ block.super }} | Welcome{% endblock title %}
+
+
+
+{% block content %}
+
+<h1 align="center">Welcome Admin</h1>
+<h3 align="center">Press analyze button to analyze and delete tweets , users and hashtags</h3>
+
+<br>
+<br>
+
+<form  method="post" style="text-align: center;" >
+    {% csrf_token %}
+
+
+    <button  type="submit"  style="width: 7em;  height: 5em; color: red ; background-color: blue; font-size: auto " name="run_script"  >Analyze</button>
+
+
+</form>
+{% endblock content %}
